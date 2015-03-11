@@ -1,0 +1,42 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+#logOut {
+	font-size: 18px;
+}
+
+paper-item, core-icon {
+  color: #212121;
+}
+
+core-icon {
+    margin-right: 10px;
+}
+
+#logOut {
+  background-color: #fff;
+  max-width: 450px;
+  color: #212121;
+}
+
+#logOut p {
+  margin: 20px;
+  color: #212121;
+  line-height: 2em;
+  text-align: center;
+}
+#logOut paper-button {
+  color: #FF4081;
+  margin-bottom: 5px;
+}
+
+paper-button::shadow #ripple {
+    color: #FF4081;
+}

@@ -1,0 +1,42 @@
+{
+  "name": "x-account-menu",
+  "authors": [
+    "TC"
+  ],
+  "description": "Element providing solution for account menu",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "menu",
+    "account-menu"
+  ],
+  "main": "x-account-menu.html",
+  "license": "MIT",
+  "homepage": "https://github.com/tc-team/x-account-menu/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "core-ajax": "Polymer/core-ajax#~0.5.5",
+    "paper-dialog": "Polymer/paper-dialog#~0.5.5",
+    "core-dropdown": "Polymer/core-dropdown#~0.5.5",
+    "paper-item": "Polymer/paper-item#~0.5.5",
+    "x-trigger-dropdown": "git@github.com:tc-team/x-trigger-dropdown.git#~0.0.1"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  },
+  "_release": "55d533655a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "55d533655aa96688d0014a76aad9af981f43dcff"
+  },
+  "_source": "git://github.com/tc-team/x-account-menu.git",
+  "_target": "master",
+  "_originalSource": "tc-team/x-account-menu",
+  "_direct": true
+}

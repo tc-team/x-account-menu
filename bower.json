@@ -1,0 +1,7 @@
+{
+  "name": "x-account-menu#gh-pages",
+  "private": true,
+  "dependencies": {
+    "x-account-menu": "tc-team/x-account-menu#master"
+  }
+}

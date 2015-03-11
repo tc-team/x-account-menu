@@ -1,0 +1,37 @@
+{
+  "name": "x-trigger-dropdown",
+  "version": "0.0.1",
+  "authors": [
+    "TC"
+  ],
+  "description": "Element providing solution for dropdown menu",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "trigger"
+  ],
+  "main": "x-trigger-dropdown.html",
+  "license": "MIT",
+  "homepage": "https://github.com/tc-team/x-trigger-dropdown/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "core-icon-button": "Polymer/core-icon-button#~0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  },
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.1",
+    "commit": "7df786dee14e91de82ab3c6f0d269294076994bb"
+  },
+  "_source": "git@github.com:tc-team/x-trigger-dropdown.git",
+  "_target": "~0.0.1",
+  "_originalSource": "git@github.com:tc-team/x-trigger-dropdown.git"
+}

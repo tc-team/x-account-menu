@@ -1,0 +1,102 @@
+<!--
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../core-icons/social-icons.html">
+<link rel="import" href="../x-trigger-dropdown/x-trigger-dropdown.html">
+<link rel="import" href="../core-dropdown/core-dropdown.html">
+<link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-dialog/paper-action-dialog.html">
+
+<!--
+Element for recording audio
+
+##### Example
+
+    <x-account-menu logged="{{sessionState}}" sessionService="http://session-service.com/session"></x-account-menu>
+
+@element x-account-menu
+@blurb Element for recording audio
+@status alpha
+@homepage https://github.com/tc-team/x-account-menu
+-->
+<polymer-element name="x-account-menu" attributes="logged sessionService">
+    <template>
+        <link rel="stylesheet" href="css/style.css">
+        
+        <core-ajax id="ajaxDelSess"
+            auto="false"
+            url="{{sessionService}}"
+            method="DELETE"
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResponseDell}}">
+        </core-ajax>
+
+        <x-trigger-dropdown icon="account-box">
+            <core-dropdown halign="right">
+                <paper-item on-click="{{openProfile}}">
+                    <core-icon icon="social:person" aria-label="person"></core-icon>
+                    Profile
+                </paper-item>
+                <paper-item on-tap="{{showLogOutDialog}}">
+                    <core-icon icon="icons:settings-power" aria-label="exit"></core-icon>
+                    Log Out
+                </paper-item>
+            </core-dropdown>
+        </x-trigger-dropdown>
+        
+        <paper-action-dialog id='logOut' backdrop autoCloseDisabled>
+            <p>Are you sure you want to <br> Log Out?</p>
+            <paper-button dismissive>More Info</paper-button>
+            <paper-button affirmative on-click="{{executeLogOut}}">Yes</paper-button>
+        </paper-action-dialog>
+     
+    </template>
+    <script>
+        Polymer({
+            /**
+            * The `sessionService` attribute sets URL for session service
+            *
+            * @attribute sessionService
+            * @type string
+            * @default ''
+            */
+            sessionService: '',
+
+            /**
+            * The `logged` attribute sets a flag that indicates that session is active or not
+            *
+            * @attribute logged
+            * @type bool
+            * @default false
+            */
+            logged: false,
+
+            openProfile: function() {
+                window.location.hash='/profile';
+            },
+            showLogOutDialog: function() {
+                this.$.logOut.toggle();
+            },
+            executeLogOut: function() {
+                this.$.ajaxDelSess.go();
+            },
+            handleResponseDell: function (event, res) {
+                if (res.response.status === 'success') {
+                    this.logged = false;
+                    window.location.hash = '/login';
+                } 
+            }            
+        });
+    </script>
+</polymer-element>
